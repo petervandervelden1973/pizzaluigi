@@ -30,6 +30,6 @@ public class IndexServlet extends HttpServlet {
 		out.print(uur >= 6 && uur < 12 ? "Goede morgen" :
 		uur >= 12 && uur < 18 ? "Goede middag": "Goede avond");
 		out.println("</h1></body></html>");
-	}
+	}ß
 
 }
