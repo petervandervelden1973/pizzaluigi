@@ -16,6 +16,9 @@
 		<dt>Naam</dt><dd>${zaakvoerder.naam}</dd>
 		<dt>Aantal kinderen</dt><dd>${zaakvoerder.aantalKinderen}</dd>
 		<dt>Gehuwd</dt><dd>${zaakvoerder.gehuwd ? 'Ja' : 'Nee'}</dd>
+		<dt>Adres</dt>
+		<dd>${zaakvoerder.adres.straat} ${zaakvoerder.adres.huisnr}<br>
+			${zaakvoerder.adres.postcode} ${zaakvoerder.adres.gemeente}</dd>
 		</dl>
 		
 	</body>
