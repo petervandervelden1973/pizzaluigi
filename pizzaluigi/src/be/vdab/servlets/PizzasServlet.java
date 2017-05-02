@@ -2,7 +2,6 @@ package be.vdab.servlets;
 
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
