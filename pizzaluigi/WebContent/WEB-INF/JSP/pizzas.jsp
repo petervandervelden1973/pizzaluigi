@@ -9,11 +9,29 @@
 		<link rel='stylesheet' href='styles/default.css'>
 	</head>
 	<body>
-		<h1>Pizza's</h1>
+		<h1>Pizza's
+			<c:forEach begin='1' end='5'>
+				&#9733; <%-- de HTML code van een ster --%>
+			</c:forEach>
+		</h1>
 		<ul class='zebra'>
-		<c:forEach var='pizza' items='${pizzas}'> 
-			<li>${pizza.naam} ${pizza.prijs}&euro;</li>
-		</c:forEach> 
+			<c:forEach var='entry' items='${pizzas}'>
+			<li>
+				${entry.key}: ${entry.value.naam} ${entry.value.prijs}&euro;
+				
+				${entry.value.pikant ? " >>> pikant!" : " >>> niet pikant"}
+				
+			<%--	<c:choose>
+					<c:when test='${entry.value.pikant}'>
+						pikant
+					</c:when>
+					<c:otherwise>
+						niet pikant
+					</c:otherwise>
+				</c:choose>
+				--%>
+			</li>
+			</c:forEach>
 		</ul>
 	</body>
 </html>
