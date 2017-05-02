@@ -27,5 +27,7 @@ public class PizzasServlet extends HttpServlet {
 		pizzas.put(23L, new Pizza(23, "Fungi & Olive", BigDecimal.valueOf(5), false));
 		request.setAttribute("pizzas", pizzas);
 		request.getRequestDispatcher(VIEW).forward(request, response);
+		
+		
 	}
 }
