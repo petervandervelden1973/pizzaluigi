@@ -3,12 +3,14 @@
 <!doctype html>
 <html lang='nl'>
 	<head>
-		<title>Pizza's</title>
-		<link rel='icon' href='images/favicon.ico'>
-		<meta name='viewport' content='width=device-width,initial-scale=1'>
-		<link rel='stylesheet' href='styles/default.css'>
+		<c:import url='/WEB-INF/JSP/head.jsp'>
+		<c:param name='title' value="Pizza's"/>
+		</c:import>
 	</head>
 	<body>
+	<c:import url='/WEB-INF/JSP/menu.jsp'/>
+	<%@taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core'%>
+	
 		<h1>Pizza's
 			<c:forEach begin='1' end='5'>
 				&#9733; <%-- de HTML code van een ster --%>
@@ -30,6 +32,13 @@
 					</c:otherwise>
 				</c:choose>
 				--%>
+				
+				<c:url value='/pizzas/detail.htm' var='detailURL'>
+					<c:param name='id' value='${entry.key}'/>
+				</c:url>
+				<a href='${detailURL}'>Detail</a>
+				
+				
 			</li>
 			</c:forEach>
 		</ul>
