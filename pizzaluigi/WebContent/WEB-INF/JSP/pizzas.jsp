@@ -9,8 +9,6 @@
 	</head>
 	<body>
 	<c:import url='/WEB-INF/JSP/menu.jsp'/>
-	<%@taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core'%>
-	
 		<h1>Pizza's
 			<c:forEach begin='1' end='5'>
 				&#9733; <%-- de HTML code van een ster --%>
