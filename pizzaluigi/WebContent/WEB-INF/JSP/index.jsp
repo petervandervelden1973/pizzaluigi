@@ -8,7 +8,7 @@
 		</c:import>
 	</head>
 	<body>
-	<c:import url='/WEB-INF/JSP/menu.jsp'/>
+		<c:import url='/WEB-INF/JSP/menu.jsp'/>
 		<h1>Pizza Luigi</h1>
 		<img src=<c:url value='/images/pizza.jpg'/> alt='pizza' class='fullwidth'>
 		<h2>${begroeting}</h2>
@@ -21,6 +21,8 @@
 		<dd>${zaakvoerder.adres.straat} ${zaakvoerder.adres.huisnr}<br>
 			${zaakvoerder.adres.postcode} ${zaakvoerder.adres.gemeente}</dd>
 		</dl>
-		
+		<div>Deze pagina werd ${aantalKeerBekeken} keer bekeken.</div>
+		<div>WebMaster:
+		<a href='mailto:${emailAdresWebMaster}'>${emailAdresWebMaster}</a></div>
 	</body>
 </html>
