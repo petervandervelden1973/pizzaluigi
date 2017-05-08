@@ -21,6 +21,7 @@ public class PizzaRepository {
 		PIZZAS.put(23L, new Pizza(23, "Fungi & Olive", BigDecimal.valueOf(5),
 				false));
 		}
+	
 public List<Pizza> findAll() { 
 	return new ArrayList<>(PIZZAS.values());
 }
@@ -31,8 +32,7 @@ return pizza == null ? Optional.empty() : Optional.of(pizza);
 }
 
 public List<Pizza> findByPrijsBetween(BigDecimal van, BigDecimal tot) {
-return PIZZAS.values().stream()
-.filter(
+return PIZZAS.values().stream().filter(
 pizza -> pizza.getPrijs().compareTo(van) >= 0 &&
 pizza.getPrijs().compareTo(tot) <= 0)
 .collect(Collectors.toList());
