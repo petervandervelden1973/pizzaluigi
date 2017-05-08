@@ -31,15 +31,9 @@ public class PizzasServlet extends HttpServlet {
 //		pizzas.put(23L, new Pizza(23, "Fungi & Olive", BigDecimal.valueOf(5), false));
 //		request.setAttribute("pizzas", pizzas);
 		
-		((AtomicInteger) this.getServletContext().getAttribute(PIZZAS_REQUESTS))
-		.incrementAndGet();
-		((AtomicInteger) this.getServletContext()
-				.getAttribute(PIZZAS_REQUESTS)).incrementAndGet();
-				request.setAttribute("pizzas", pizzaRepository.findAll());
-				request.getRequestDispatcher(VIEW).forward(request, response);
-		
+		((AtomicInteger) this.getServletContext().getAttribute(PIZZAS_REQUESTS)).incrementAndGet();
+		request.setAttribute("pizzas", pizzaRepository.findAll());
 		request.getRequestDispatcher(VIEW).forward(request, response);
-	
 	}
 	
 	@Override
