@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import be.vdab.entities.Pizza;
 import be.vdab.repositories.PizzaRepository;
 
 @WebServlet("/pizzas.htm")
@@ -25,19 +24,22 @@ public class PizzasServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	throws ServletException, IOException {
-		Map<Long, Pizza> pizzas = new LinkedHashMap<>(); // keys zijn pizza ids
-		pizzas.put(12L, new Pizza(12, "Prosciutto", BigDecimal.valueOf(4), true));
-		pizzas.put(14L, new Pizza(14, "Margehrita", BigDecimal.valueOf(5), false));
-		pizzas.put(17L, new Pizza(17, "Calzone", BigDecimal.valueOf(4), false));
-		pizzas.put(23L, new Pizza(23, "Fungi & Olive", BigDecimal.valueOf(5), false));
-		request.setAttribute("pizzas", pizzas);
-		request.getRequestDispatcher(VIEW).forward(request, response);
+//		Map<Long, Pizza> pizzas = new LinkedHashMap<>(); // keys zijn pizza ids
+//		pizzas.put(12L, new Pizza(12, "Prosciutto", BigDecimal.valueOf(4), true));
+//		pizzas.put(14L, new Pizza(14, "Margehrita", BigDecimal.valueOf(5), false));
+//		pizzas.put(17L, new Pizza(17, "Calzone", BigDecimal.valueOf(4), false));
+//		pizzas.put(23L, new Pizza(23, "Fungi & Olive", BigDecimal.valueOf(5), false));
+//		request.setAttribute("pizzas", pizzas);
+		
 		((AtomicInteger) this.getServletContext().getAttribute(PIZZAS_REQUESTS))
 		.incrementAndGet();
 		((AtomicInteger) this.getServletContext()
 				.getAttribute(PIZZAS_REQUESTS)).incrementAndGet();
 				request.setAttribute("pizzas", pizzaRepository.findAll());
 				request.getRequestDispatcher(VIEW).forward(request, response);
+		
+		request.getRequestDispatcher(VIEW).forward(request, response);
+	
 	}
 	
 	@Override
