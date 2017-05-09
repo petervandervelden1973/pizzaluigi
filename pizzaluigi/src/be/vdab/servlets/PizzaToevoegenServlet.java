@@ -19,7 +19,7 @@ import be.vdab.util.StringUtils;
 @WebServlet("/pizzas/toevoegen.htm")
 public class PizzaToevoegenServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final String VIEW = "/WEB-INF/JSP/pizzatoevoegen.jsp";
+	private static final String VIEW = "/WEB-INF/JSP/toevoegen.jsp";
 	private static final String SUCCESS_VIEW = "/WEB-INF/JSP/pizzas.jsp";
 	private final PizzaRepository pizzaRepository = new PizzaRepository();
 
