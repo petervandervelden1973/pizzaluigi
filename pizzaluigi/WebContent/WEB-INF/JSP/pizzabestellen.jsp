@@ -35,5 +35,14 @@
 			document.getElementById('toevoegknop').disabled = true;
 		};
 	</script>
+	<script>
+		document.getElementById('toevoegform').onsubmit = function() {
+			if (!navigator.cookieEnabled) {
+				alert("Dit werkt enkel als cookies aanstaan");
+				return false;
+			}
+			document.getElementById('toevoegknop').disabled = true;
+		};
+	</script>
 </body>
 </html>
