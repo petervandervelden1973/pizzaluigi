@@ -9,6 +9,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import be.vdab.entities.Pizza;
 
@@ -19,6 +21,7 @@ public class PizzaRepository extends AbstractRepository {
 	private static final String READ = BEGIN_SELECT + "where id=?";
 	private static final String FIND_BY_PRIJS_BETWEEN = BEGIN_SELECT + "where prijs between ? and ? order by prijs";
 	private static final String CREATE = "insert into pizzas(naam, prijs, pikant) values (?, ?, ?)";
+	private final static Logger LOGGER = Logger.getLogger(PizzaRepository.class.getName());
 
 	public List<Pizza> findAll() {
 		try (Connection connection = dataSource.getConnection();
@@ -30,6 +33,8 @@ public class PizzaRepository extends AbstractRepository {
 			}
 			return pizzas;
 		} catch (SQLException ex) {
+			LOGGER.log(Level.SEVERE, "Probleem met database pizzaluigi", ex);
+			LOGGER.log(Level.SEVERE, "Probleem met database pizzaluigi", ex);
 			throw new RepositoryException(ex);
 		}
 	}
@@ -50,6 +55,8 @@ public class PizzaRepository extends AbstractRepository {
 				return Optional.empty();
 			}
 		} catch (SQLException ex) {
+			LOGGER.log(Level.SEVERE, "Probleem met database pizzaluigi", ex);
+			LOGGER.log(Level.SEVERE, "Probleem met database pizzaluigi", ex);
 			throw new RepositoryException(ex);
 		}
 	}
@@ -67,6 +74,8 @@ public class PizzaRepository extends AbstractRepository {
 				return pizzas;
 			}
 		} catch (SQLException ex) {
+			LOGGER.log(Level.SEVERE, "Probleem met database pizzaluigi", ex);
+			LOGGER.log(Level.SEVERE, "Probleem met database pizzaluigi", ex);
 			throw new RepositoryException(ex);
 		}
 	}
@@ -83,6 +92,8 @@ public class PizzaRepository extends AbstractRepository {
 				pizza.setId(resultSet.getLong(1));
 			}
 		} catch (SQLException ex) {
+			LOGGER.log(Level.SEVERE, "Probleem met database pizzaluigi", ex);
+			LOGGER.log(Level.SEVERE, "Probleem met database pizzaluigi", ex);
 			throw new RepositoryException(ex);
 		}
 	}
