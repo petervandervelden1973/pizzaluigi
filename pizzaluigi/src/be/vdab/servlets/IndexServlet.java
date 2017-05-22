@@ -38,6 +38,7 @@ public class IndexServlet extends HttpServlet {
 				new Persoon("Luigi", "Peperone", 7, true, new Adres("Grote Markt", "3 bus 2", 9700, "Oudenaarde")));
 		request.setAttribute("begroeting", new Begroeting());
 		request.getRequestDispatcher(VIEW).forward(request, response);
+		request.setAttribute("aantalPizzasVerkocht", 23000);
 		LocalDateTime nu = LocalDateTime.now();
 		request.setAttribute("nu", nu);
 	}
