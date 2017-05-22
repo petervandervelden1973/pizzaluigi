@@ -2,8 +2,6 @@ package be.vdab.servlets;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.servlet.ServletException;

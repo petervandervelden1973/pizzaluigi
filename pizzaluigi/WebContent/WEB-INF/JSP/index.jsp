@@ -36,11 +36,7 @@
 	<div>
 		WebMaster: <a href='mailto:${emailAdresWebMaster}'>${emailAdresWebMaster}</a>
 	</div>
-	<fmt:parseDate value="${nu}" pattern="yyyy-MM-dd" var="nuAlsDate"
-		type="date" />
-	<div>
-		Vandaag:
-		<fmt:formatDate value='${nuAlsDate}' />
-	</div>
+	<fmt:parseDate value="${nu}" pattern="yyyy-MM-dd" var="nuAlsDate" type="date" />
+	<div>Vandaag:<fmt:formatDate value='${nuAlsDate}' /></div>
 </body>
 </html>
